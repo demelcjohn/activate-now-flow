@@ -107,6 +107,23 @@
         border-radius: 29px;
         font-size: 16px;
         font-family: "Nunito Sans", sans-serif;
+        background-color: #5ddcc3;
+        color: #ffffff;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover:not(:disabled) {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(93, 220, 195, 0.4);
+        }
+
+        &:disabled,
+        &.activated {
+          background-color: #4caf50;
+          cursor: not-allowed;
+          opacity: 0.8;
+        }
       }
     }
   }

@@ -27,9 +27,20 @@
       <div class="fee-card-line">
         <div class="annual-fee">Annual Fee ₹ 3,40,000</div>
         <div class="activate-button">
-          <button>Activate Now</button>
+          <button
+            (click)="openModal()"
+            [disabled]="isActivated"
+            [class.activated]="isActivated"
+          >
+            {{ isActivated ? "Activated" : "Activate Now" }}
+          </button>
         </div>
       </div>
     </div>
   }
+
+  <app-activation-modal
+    *ngIf="showModal"
+    (closeModal)="closeModal()"
+  ></app-activation-modal>
 </div>

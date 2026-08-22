@@ -1,0 +1,147 @@
+<div class="modal-overlay">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Please enter your details below</h2>
+      <button class="close-button" (click)="onCancel()">&times;</button>
+    </div>
+
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+
+    <form [formGroup]="activationForm" class="activation-form">
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <div class="input-wrapper">
+          <input
+            type="tel"
+            id="phone"
+            formControlName="phone"
+            placeholder="Enter 10 digits or +91xxxxxxxxxx"
+            class="form-input"
+            [class.error]="
+              activationForm.get('phone')?.invalid &&
+              activationForm.get('phone')?.touched
+            "
+          />
+          <span
+            class="valid-tick"
+            *ngIf="isFieldValid('phone')"
+            title="Valid phone number"
+          >
+            ✓
+          </span>
+        </div>
+        <span
+          class="error-text"
+          *ngIf="
+            activationForm.get('phone')?.invalid &&
+            activationForm.get('phone')?.touched
+          "
+        >
+          {{ getErrorMessage("phone") }}
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="pan">PAN Card Number</label>
+        <input
+          type="text"
+          id="pan"
+          formControlName="pan"
+          placeholder="Enter PAN (e.g., ABCDE1234F)"
+          class="form-input"
+          [class.error]="
+            activationForm.get('pan')?.invalid &&
+            activationForm.get('pan')?.touched
+          "
+        />
+        <span
+          class="error-text"
+          *ngIf="
+            activationForm.get('pan')?.invalid &&
+            activationForm.get('pan')?.touched
+          "
+        >
+          {{ getErrorMessage("pan") }}
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Name as in Pan Card</label>
+        <input
+          type="text"
+          id="name"
+          formControlName="name"
+          placeholder="Enter your full name"
+          class="form-input"
+          [class.error]="
+            activationForm.get('name')?.invalid &&
+            activationForm.get('name')?.touched
+          "
+        />
+        <span
+          class="error-text"
+          *ngIf="
+            activationForm.get('name')?.invalid &&
+            activationForm.get('name')?.touched
+          "
+        >
+          {{ getErrorMessage("name") }}
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <div class="input-wrapper">
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            placeholder="Enter your email"
+            class="form-input"
+            [class.error]="
+              activationForm.get('email')?.invalid &&
+              activationForm.get('email')?.touched
+            "
+          />
+          <span
+            class="valid-tick"
+            *ngIf="isFieldValid('email')"
+            title="Valid email address"
+          >
+            ✓
+          </span>
+        </div>
+        <span
+          class="error-text"
+          *ngIf="
+            activationForm.get('email')?.invalid &&
+            activationForm.get('email')?.touched
+          "
+        >
+          {{ getErrorMessage("email") }}
+        </span>
+      </div>
+
+      <div class="form-actions">
+        <button
+          type="button"
+          class="cancel-button"
+          (click)="onCancel()"
+          [disabled]="loading"
+        >
+          Cancel
+        </button>
+        <button
+          type="button"
+          class="activate-button"
+          (click)="onActivate()"
+          [disabled]="loading"
+        >
+          {{ loading ? "Processing..." : "Activate" }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

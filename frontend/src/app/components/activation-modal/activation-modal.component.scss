@@ -1,0 +1,209 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background: #ffffff;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease-out;
+  overflow: hidden;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  color: #000000;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h2 {
+    margin: 0;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .close-button {
+    background: none;
+    border: none;
+    color: #000000;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.success-message {
+  background-color: #4caf50;
+  color: #ffffff;
+  padding: 12px 20px;
+  text-align: center;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+}
+
+.error-message {
+  background-color: #f44336;
+  color: #ffffff;
+  padding: 12px 20px;
+  text-align: center;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+}
+
+.activation-form {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #7e8296;
+  }
+
+  .input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .form-input {
+    padding: 12px 16px;
+    border: none;
+    border-bottom: 2px solid #e0e0e0;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+      border-color: #ff728e;
+      box-shadow: 0 0 0 3px rgba(255, 114, 142, 0.1);
+    }
+
+    &.error {
+      border-color: #f44336;
+    }
+  }
+
+  .valid-tick {
+    position: absolute;
+    right: 12px;
+    color: #4caf50;
+    font-size: 18px;
+    font-weight: bold;
+    animation: tickFadeIn 0.3s ease-in;
+  }
+
+  @keyframes tickFadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .error-text {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 12px;
+    color: #f44336;
+    font-weight: 500;
+  }
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+
+  button {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 29px;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+
+  .cancel-button {
+    background-color: #444859;
+    color: #fff;
+
+    &:hover:not(:disabled) {
+      background-color: #d0d0d0;
+    }
+  }
+
+  .activate-button {
+    background-color: #5ddcc3;
+    color: #ffffff;
+
+    &:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 114, 142, 0.4);
+    }
+  }
+}
