@@ -1,4 +1,5 @@
 .dashboard {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -73,5 +74,40 @@
     height: 280px;
     top: 217px;
     border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 20px;
+    color: #ffffff;
+    font-family: "Nunito Sans", sans-serif;
+    .fee-card-line {
+      display: flex;
+      align-items: center;
+
+      .intro-line {
+        font-size: 24px;
+        font-weight: 600;
+      }
+      .rate-line {
+        font-size: 18px;
+        font-weight: 600;
+      }
+      .rate-percentage {
+        font-size: 72px;
+        font-weight: 800;
+        margin-right: 10px;
+      }
+      .annual-fee {
+        font-size: 24px;
+        font-weight: 700;
+      }
+      .activate-button button {
+        width: 150px;
+        height: 50px;
+        border-radius: 29px;
+        font-size: 16px;
+        font-family: "Nunito Sans", sans-serif;
+      }
+    }
   }
 }
