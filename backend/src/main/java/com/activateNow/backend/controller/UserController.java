@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import com.activateNow.backend.dto.UserRequest;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class UserController {
 
     private final UserService userService;
