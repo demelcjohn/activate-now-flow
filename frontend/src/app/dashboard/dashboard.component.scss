@@ -1,0 +1,77 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__header {
+    background: linear-gradient(270deg, #ffa36e 0%, #ff728e 100%);
+    height: 156px;
+    width: 100%;
+    border-radius: 0px 0px 0 20px;
+    .school-details-container {
+      display: flex;
+      gap: 10px;
+      padding-left: 4%;
+      padding-top: 35px;
+      .school-icon {
+        width: 47px;
+        height: 47px;
+        background: #ffffff;
+        border-radius: 50%;
+      }
+      .school-name {
+        font-family: "Nunito Sans", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 100%;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  &__user-details {
+    position: absolute;
+    width: 93%;
+    height: 94px;
+    top: 109px;
+    border-radius: 16px;
+    background: #ffffff;
+    .user-details-container {
+      display: flex;
+      gap: 10px;
+      padding: 7px;
+
+      .user-icon {
+        width: 79px;
+        height: 79px;
+        background: #ffffff;
+        border-radius: 50%;
+        border: 1px solid #e0e0e0;
+      }
+      .user-name-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-family: "Nunito Sans", sans-serif;
+        .user-name {
+          font-size: 19px;
+        }
+        .user-id {
+          font-size: 15px;
+          color: #6e6e6e;
+        }
+      }
+    }
+  }
+
+  &__fee-detail-card {
+    background: linear-gradient(180deg, #cc208e 0%, #6713d2 100%);
+    position: absolute;
+    width: 93%;
+    height: 280px;
+    top: 217px;
+    border-radius: 16px;
+  }
+}
